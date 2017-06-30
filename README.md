@@ -9,4 +9,4 @@ pmxとvmdを読み込ませるだけの簡単なもの。
 
 素晴らしいモデル、モーションの作者様  
 ・モデル「Tda 様」（ttp://seiga.nicovideo.jp/seiga/im2018614）  
-・モーション「hino 様」(ttp://www.nicovideo.jp/watch/sm14365789)
+・モーション「hino 様」(ttp://www.nicovideo.jp/watch/sm14365789)  
