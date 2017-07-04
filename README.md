@@ -7,6 +7,6 @@ pmxとvmdを読み込ませるだけの簡単なもの。
 独学の為、いろいろ足りないのは大目に見て頂けると幸いです。  
 突っ込みは随時受付中。
 
-素晴らしいモデル、モーションの作者様  
-・モデル「Tda 様」（ttp://seiga.nicovideo.jp/seiga/im2018614）  
-・モーション「hino 様」(ttp://www.nicovideo.jp/watch/sm14365789)  
+## 素晴らしいモデル、モーションの作者様  
+・モデル[Tda 様] http://seiga.nicovideo.jp/seiga/im2018614  
+・モーション[hino 様] http://www.nicovideo.jp/watch/sm14365789  
