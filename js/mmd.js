@@ -8,10 +8,9 @@ let modelReady = false;
 let scene = new THREE.Scene();
 
 let renderer = new THREE.WebGLRenderer({antialial:true});
-renderer.setSize(width,height);
-//端末にあった解像度に設定
 renderer.setPixelRatio(window.devicePixelRatio);
-//domにレンダラーを追加
+renderer.setSize(width,height);
+rederer.setClearColor(new THREE.Color(0xffffff));
 document.body.appendChild(renderer.domElement);
 
 let camera = new THREE.PerspectiveCamera(50, width/height,0.1,1000);
@@ -92,21 +91,28 @@ let mmdHelper = new THREE.MMDHelper(renderer);
 
 //mmdデータを読み込み、オブジェクト生成、シーンへの追加
 let model;
+let ikHelper;
 mmdLoader.loadModel("models/Tdamiku.pmx",function(object){
-	object.scale.set(0.3,0.3,0.3);
-	object.position.set(0,-3,0);
-	object.receiveShadow = true;
-	object.castShadow = true;
-	scene.add(object);
-	//メッシュオブジェクトをヘルパーに渡す
-	mmdHelper.add(object);
 	model = object;
+	model.scale.set(0.3,0.3,0.3);
+	model.position.set(0,-3,0);
+	model.receiveShadow = true;
+	model.castShadow = true;
+	mmdHelper.add(model);
+
+	ikHelper = new THREE.CCDIKHelper(model);
+	ikHelper.visible = false;
+	scene.add(ikHelper);
+	mmdHelper.setAnimation(model);
+	mmdHelper.setPhysics(model);
+
+
 
 	//ダンス設定
 	mmdLoader.loadVmd("models/nekomimi_lat.vmd",function(vmd){
-		scene.add(model);
 		mmdLoader.pourVmdIntoModel(model,vmd);
 		mmdHelper.setAnimation(model);
+		scene.add(model);
 	});
 });
 
